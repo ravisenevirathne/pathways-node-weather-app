@@ -10,6 +10,7 @@ on:
       - '*dockerfile'
       - 'modules/**'
       - '**.tf'
+      - '*.tfvars'
 
 jobs:
   terraform_destroy_plan:
