@@ -108,3 +108,7 @@ resource "aws_route_table_association" "rt-private-association" {
     subnet_id = aws_subnet.private[count.index].id
     route_table_id = aws_route_table.rt-private[count.index].id
 }
+
+///data "aws_vpc_endpoint" "name" {
+  
+//}
