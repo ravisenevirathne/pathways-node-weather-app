@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "pathways-dojo-ravi"
+    bucket = "pathways-dojo"
     key    = "ravisenevirathne-tfstate-main"
     region = "us-east-1"
   }
