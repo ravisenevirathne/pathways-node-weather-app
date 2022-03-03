@@ -1,17 +1,17 @@
-name: Deploy
+name: Deploy-Infrastructure-Platform
 on:
   push:
     branches:
       - master
     paths:
-      - 'docker-compose.yml'
-      - 'Makefile'
+      - 'Infrastructure-Platform/docker-compose.yml'
+      - 'Infrastructure-Platform/Makefile'
       - '.github/workflows/**'
-      - '*dockerfile'
-      - 'modules/**'
-      - '**.tf'
-      - '*.tfvars'
-      - '*.txt'
+      - 'Infrastructure-Platform/*dockerfile'
+      - 'Infrastructure-Platform/modules/**'
+      - 'Infrastructure-Platform/**.tf'
+      - 'Infrastructure-Platform/*.tfvars'
+      - 'Infrastructure-Platform/*.txt'
 
 jobs:
   terraform_plan:
