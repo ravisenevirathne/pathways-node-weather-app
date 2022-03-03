@@ -11,6 +11,7 @@ on:
       - 'modules/**'
       - '**.tf'
       - '*.tfvars'
+      - '*.txt'
 
 jobs:
   terraform_destroy_plan:

@@ -11,6 +11,8 @@ on:
       - 'modules/**'
       - '**.tf'
       - '*.tfvars'
+      - '*.txt'
+
 jobs:
   terraform_plan:
     runs-on: ubuntu-latest
