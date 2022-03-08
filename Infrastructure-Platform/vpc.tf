@@ -56,16 +56,16 @@ resource "aws_eip" "eip_natgw" {
 
 
 resource "aws_nat_gateway" "ngw" {
-  count         = length(var.subnets_private)
+  count         = length(var.subnets_public)
   allocation_id = aws_eip.eip_natgw[count.index].id
-  subnet_id     = aws_subnet.private[count.index].id
+  subnet_id     = aws_subnet.public[count.index].id
 
   depends_on = [
     aws_internet_gateway.igw
   ]
 
   tags = {
-    "Name" = "${var.prefix}-${var.subnets_private[count.index].name}-ngw"
+    "Name" = "${var.prefix}-${var.subnets_public[count.index].name}-ngw"
   }
 
 
