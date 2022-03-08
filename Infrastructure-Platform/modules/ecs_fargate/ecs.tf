@@ -74,7 +74,7 @@ resource "aws_ecs_service" "ecs-service" {
   name =    "${var.prefix}-weatherapp-ecs-service"
   cluster   = aws_ecs_cluster.ecs-cluster.id
   task_definition = aws_ecs_task_definition.ecs-task.arn
-  desired_count     = 2
+  desired_count     = 3
   #platform_version = "1.3.0"
   launch_type = "FARGATE"
   depends_on = [aws_iam_role.ecs-role, aws_iam_policy.ecs-policy, aws_iam_role_policy_attachment.ecs-attachment]

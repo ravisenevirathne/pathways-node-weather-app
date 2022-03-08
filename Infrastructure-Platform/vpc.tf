@@ -65,7 +65,7 @@ resource "aws_nat_gateway" "ngw" {
   ]
 
   tags = {
-    "Name" = "${var.prefix}-${var.subnets_private[count.index].name}-ngw"
+    "Name" = "${var.prefix}-${var.subnets_public[count.index].name}-ngw"
   }
 
 
