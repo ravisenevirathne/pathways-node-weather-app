@@ -1,0 +1,43 @@
+name: Weather-App-Build
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'Weather-Application/**'
+      - '.github/workflows/app.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Login Build and Push
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Login to ECR
+        working-directory: ./Weather-Application
+        run: make login
+        env:
+          ACCOUNTID: ${{ secrets.ACCOUNTID }}
+          AWSREGION: ${{ secrets.AWSREGION }}
+          REPONAME: ${{ secrets.REPONAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SESSION_TOKEN:  ${{ secrets.AWS_SESSION_TOKEN }} 
+
+      - name: Build Image
+        working-directory: ./Weather-Application
+        env:
+          ACCOUNTID: ${{ secrets.ACCOUNTID }}
+          AWSREGION: ${{ secrets.AWSREGION }}
+          REPONAME: ${{ secrets.REPONAME }}
+        run: make build
+
+      - name: Push Image to ECR
+        working-directory: ./Weather-Application
+        env:
+          ACCOUNTID: ${{ secrets.ACCOUNTID }}
+          AWSREGION: ${{ secrets.AWSREGION }}
+          REPONAME: ${{ secrets.REPONAME }}
+        run: make push

@@ -1,6 +1,6 @@
 vpc_cidr = "10.0.1.0/24"
 
-prefix = "RaviS"
+prefix = "ravis"
 
 tags = {
   "name"    = "Ravi Senevirathne"

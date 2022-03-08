@@ -84,12 +84,12 @@ Additionally, ONLY changes to the following files and paths will trigger a workf
 <br>
 
 ### main.yml workflow
-![Main Workflow](images/main.yml_workflow.png)
+![Main Workflow](Weather-Application/images/main.yml_workflow.png)
 
 <br>
 
 ### destroy.yml workflow
-![Destroy Workflow](images/destroy.yml_workflow.png)
+![Destroy Workflow](Weather-Application/images/destroy.yml_workflow.png)
 
 <br>
 
@@ -97,7 +97,7 @@ Create an environment in your repository named `approval` to support GitHub Work
 
 <br> 
 
-![GitHub Environment](images/github_environment.png)
+![GitHub Environment](Weather-Application/images/github_environment.png)
 
 <br> 
 

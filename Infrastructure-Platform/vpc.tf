@@ -78,6 +78,10 @@ resource "aws_route_table" "rt-public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
+
+  depends_on = [
+    aws_internet_gateway.igw
+  ]
   tags = {
     "Name" = "${var.prefix}-${var.subnets_public[count.index].name}-rt-public"
   }
@@ -91,6 +95,10 @@ resource "aws_route_table" "rt-private" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.ngw[count.index].id
   }
+
+depends_on = [
+  aws_nat_gateway.ngw
+]
   tags = {
     "Name" = "${var.prefix}-${var.subnets_private[count.index].name}-rt-private"
   }
@@ -109,6 +117,28 @@ resource "aws_route_table_association" "rt-private-association" {
   route_table_id = aws_route_table.rt-private[count.index].id
 }
 
-///data "aws_vpc_endpoint" "name" {
+resource "aws_vpc_endpoint" "vpc_endpoint" {
+  vpc_id = aws_vpc.vpc.id
+  service_name = "com.amazonaws.us-east-1.s3"
+  tags = {
+    "Name" = "${var.prefix}-s3vpc-endpoint"
+  }
+}
 
-//****S}
+resource "aws_vpc_endpoint_route_table_association" "public_s3_endpoint_association" {
+  count = length (var.subnets_public)
+  route_table_id = aws_route_table.rt-public[count.index].id
+  vpc_endpoint_id = aws_vpc_endpoint.vpc_endpoint.id
+}
+
+resource "aws_vpc_endpoint_route_table_association" "private_s3_endpoint_association" {
+  count = length (var.subnets_private)
+  route_table_id = aws_route_table.rt-private[count.index].id
+  vpc_endpoint_id = aws_vpc_endpoint.vpc_endpoint.id
+}
+
+
+output "vpc_id" {
+  value = aws_vpc.vpc.id
+}
+
