@@ -1,0 +1,14 @@
+[
+    {
+        "portMappings": [
+        {
+            "protocol": "tcp",
+            "containerPort": 3000
+        }],
+        "name": "ravis-weatherapp",
+        "image": "152848913167.dkr.ecr.us-east-1.amazonaws.com/ravis-node-weather-app:1",
+        "requiresCompatibilities": [ 
+            "FARGATE" 
+         ]
+    }
+]
