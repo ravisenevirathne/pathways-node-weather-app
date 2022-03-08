@@ -6,7 +6,7 @@ REPONAME = ravis-node-weather-app
 
 .PHONY: build
 build:
-	docker buildx build --platform linux/amd64 -t $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1 -f $(DOCKERFILE) .
+	docker build --platform linux/amd64 -t $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1 -f $(DOCKERFILE) .
 
 .PHONY: login
 login:
@@ -14,4 +14,4 @@ login:
 
 .PHONY: push
 push:
-	docker push $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1 
+	docker push $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1
