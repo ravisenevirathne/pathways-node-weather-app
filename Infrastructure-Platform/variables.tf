@@ -36,4 +36,3 @@ variable "subnets_private" {
     cidr = string
   }))
 }
-
