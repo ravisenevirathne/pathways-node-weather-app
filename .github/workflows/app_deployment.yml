@@ -5,7 +5,7 @@ on:
       - master
     paths:
       - 'Weather-Application/**'
-      - '.github/workflows/app.yml'
+      - '.github/workflows/app_deployment.yml'
 
 jobs:
   build:
