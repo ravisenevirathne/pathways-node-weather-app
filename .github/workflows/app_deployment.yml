@@ -36,7 +36,7 @@ jobs:
 
       - name: Push Image to ECR
         working-directory: ./Weather-Application
-
+        env:
           ACCOUNTID: ${{ secrets.ACCOUNTID }}
           AWSREGION: ${{ secrets.AWSREGION }}
           REPONAME: ${{ secrets.REPONAME }}
