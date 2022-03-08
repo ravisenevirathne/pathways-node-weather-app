@@ -22,7 +22,7 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Weather",
+    title: "Weather Dojo App",
     name: "Phatthara Pisootrapee"
   });
 });
