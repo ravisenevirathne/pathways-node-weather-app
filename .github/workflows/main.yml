@@ -6,7 +6,8 @@ on:
     paths:
       - 'Infrastructure-Platform/docker-compose.yml'
       - 'Infrastructure-Platform/Makefile'
-      - '.github/workflows/**'
+      - '.github/workflows/destroy.yml'
+      - '.github/workflows/main.yml'
       - 'Infrastructure-Platform/*dockerfile'
       - 'Infrastructure-Platform/modules/**'
       - 'Infrastructure-Platform/**.tf'
