@@ -41,3 +41,6 @@ jobs:
           AWSREGION: ${{ secrets.AWSREGION }}
           REPONAME: ${{ secrets.REPONAME }}
         run: make push
+      
+      - name: ECR Refresh
+        run: make refresh
