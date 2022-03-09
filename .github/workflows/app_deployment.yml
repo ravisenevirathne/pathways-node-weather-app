@@ -41,3 +41,7 @@ jobs:
           AWSREGION: ${{ secrets.AWSREGION }}
           REPONAME: ${{ secrets.REPONAME }}
         run: make push
+
+      - name: ECStask
+        working-directory: ./Weather-Application
+        run: make refresh

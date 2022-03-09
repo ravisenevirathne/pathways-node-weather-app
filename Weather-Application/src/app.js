@@ -22,7 +22,7 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Weather New 2",
+    title: "Weather New 3",
     name: "Phatthara Pisootrapee"
   });
 });

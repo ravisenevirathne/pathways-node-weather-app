@@ -15,3 +15,7 @@ login:
 .PHONY: push
 push:
 	docker push $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1
+
+.PHONY: refresh
+refresh:
+	for taskarn in $(aws ecs list-tasks --cluster ravis-weatherapp-ecs-cluster --service ravis-weatherapp-ecs-service --desired-status RUNNING --output text --query 'taskArns'); do aws ecs stop-task --cluster ravis-weatherapp-ecs-cluster --task $taskarn; done;
