@@ -16,6 +16,6 @@ login:
 push:
 	docker push $(ACCOUNTID).dkr.ecr.$(AWSREGION).amazonaws.com/$(REPONAME):1
 
-.PHONY refresh
+.PHONY: refresh
 refresh:
 	aws ecs update-service --cluster ravis-weatherapp-ecs-cluster --service ravis-weatherapp-ecs-service --force-new-deployment --region us-east-1
