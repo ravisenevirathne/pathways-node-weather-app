@@ -48,5 +48,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SESSION_TOKEN:  ${{ secrets.AWS_SESSION_TOKEN }} 
-          AWSREGION: ${{ secrets.AWSREGION }}
+          AWS_DEFAULT_REGION: us-east-1
         run: for taskarn in $(aws ecs list-tasks --cluster ravis-weatherapp-ecs-cluster --service ravis-weatherapp-ecs-service --desired-status RUNNING --output text --query 'taskArns'); do aws ecs stop-task --cluster ravis-weatherapp-ecs-cluster --task $taskarn; done;
