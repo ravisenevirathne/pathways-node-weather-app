@@ -18,3 +18,9 @@ subnets_private = [
   { name = "private-a", cidr = "10.0.1.64/26" },
   { name = "private-b", cidr = "10.0.1.128/26" },
 { name = "private-c", cidr = "10.0.1.192/26" }]
+
+fargate_cpu = 512
+fargate_memory = 256
+fargate_count = 2
+
+container_port  = 3000
