@@ -21,6 +21,6 @@ subnets_private = [
 
 fargate_cpu = 512
 fargate_memory = 256
-fargate_count = 2
+fargate_count = 1
 
 container_port  = 3000
