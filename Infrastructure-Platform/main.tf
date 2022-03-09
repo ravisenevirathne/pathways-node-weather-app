@@ -12,6 +12,10 @@ module "ecs_fargate" {
   vpc_id = aws_vpc.vpc.id
   public_subnet_ids = aws_subnet.public.*.id
   private_subnet_ids = aws_subnet.private.*.id
+  fargate_count = var.fargate_count
+  fargate_cpu = var.fargate_cpu
+  fargate_memory = var.fargate_memory
+  container_port = var.container_port
   
 }
 
