@@ -15,7 +15,7 @@ resource "aws_security_group" "alb-sg" {
         to_port = 0
         protocol = "-1"
         cidr_blocks  = ["0.0.0.0/0"]
-        #security_groups = [aws_security_group.ecs-sg.id]
+       
     }
 
   tags = {
@@ -30,8 +30,8 @@ resource "aws_security_group" "ecs-sg" {
 
   ingress  {
       description = "Alb to Ecs traffic"
-      from_port = 3000
-      to_port = 3000
+      from_port = var.container_port
+      to_port = var.container_port
       protocol = "tcp"
       security_groups = [aws_security_group.alb-sg.id]
   }

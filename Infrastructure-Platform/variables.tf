@@ -36,3 +36,19 @@ variable "subnets_private" {
     cidr = string
   }))
 }
+
+variable "fargate_cpu" {
+  type = number
+}
+
+variable "fargate_memory" {
+  type = number
+}
+
+variable "fargate_count" {
+  type = number
+}
+
+variable "container_port" {
+  type = number
+}
