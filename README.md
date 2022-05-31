@@ -207,7 +207,7 @@ Happy Hacking!
 * Fargate count can be modified to simulate the Infrastructure changes in pipeline. once git pushed it will trigger the main.yml workflow do nessary changes
 ![image](https://user-images.githubusercontent.com/85973309/171168174-9384ff42-b2c6-4efa-b1d5-db6c76034769.png)
 
-* Create a Pull requests from Master -> Destroy to destroy all the terraform Infrastructure
+* Create a Pull requests from Master -> Destroy to destroy all the terraform Infrastructure. This will trigger destroy.yml workflow and will destroy the infrastructure
 ![image](https://user-images.githubusercontent.com/85973309/171169358-7d8a9238-ecd7-4cc2-9230-3266618afff8.png)
 
 
