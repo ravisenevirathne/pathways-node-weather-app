@@ -186,3 +186,13 @@ npm run dev
 ```
 
 Happy Hacking!
+
+<br>
+
+## How to setup on a new AWS Account
+
+* Update local .aws/credentials file and github project settings->Secrets->Action secrets with AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY & AWS_SESSION_TOKEN
+
+* Update ACCOUNTID and AWSREGION for ECR as per your AWS account on below two locations
+
+
