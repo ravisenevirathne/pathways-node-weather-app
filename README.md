@@ -195,4 +195,25 @@ Happy Hacking!
 
 * Update ACCOUNTID and AWSREGION for ECR as per your AWS account on below two locations
 
+    ![image](https://user-images.githubusercontent.com/85973309/171165489-84d21446-ad9c-472a-941e-a94670b01733.png)
+    
+    ![image](https://user-images.githubusercontent.com/85973309/171165825-1ba1b49b-94b5-4d2e-abc9-bae91af1f239.png)
+
+* If you are deploying to new AWS account github workflow actions need to perform in app_deployment.yml -> main.yml order (There should be images available on ECR repo, so ECS cluster fargate can pull the images)
+
+* Application heading can be modified on below location to simulate the new version of app. Then git push to remote repo and it will trigger the github app_deployment.yml workflow
+![image](https://user-images.githubusercontent.com/85973309/171167661-6cc58464-a877-4a67-b3d7-1b74294e33bc.png)
+
+* Fargate count can be modified to simulate the Infrastructure changes in pipeline. once git pushed it will trigger the main.yml workflow do nessary changes
+![image](https://user-images.githubusercontent.com/85973309/171168174-9384ff42-b2c6-4efa-b1d5-db6c76034769.png)
+
+
+
+
+
+    
+ 
+
+
+
 
