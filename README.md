@@ -177,7 +177,7 @@ Install node modules.
 npm install
 ```
 
-### Running the App
+Running the App
 
 Run this app in devlopment mode with command below and navigate to http://localhost:3000 to see the app.
 
@@ -188,6 +188,18 @@ npm run dev
 Happy Hacking!
 
 <br>
+
+### ************************************************************************************************************
+
+## Solution Design
+![image](https://user-images.githubusercontent.com/85973309/171304488-6f549cec-be3c-4d55-8120-bc40b9053c8b.png)
+
+## Deployment Workflow
+### Infrastructure Deployment
+![image](https://user-images.githubusercontent.com/85973309/171304614-da5f0ed1-f0f7-4b62-b1e0-13e4ff5e24e1.png)
+
+### Application Deployment
+![image](https://user-images.githubusercontent.com/85973309/171304646-8474cf00-59bd-4946-b6c7-0c88d97b1296.png)
 
 ## How to setup on a new AWS Account
 
